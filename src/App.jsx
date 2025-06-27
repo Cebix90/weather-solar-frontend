@@ -20,10 +20,10 @@ function App() {
 
     Promise.all([
       fetch(
-        `/weather/forecast?latitude=${actualLat}&longitude=${actualLng}`
+        `${import.meta.env.VITE_BACKEND_URL}/weather/forecast?latitude=${actualLat}&longitude=${actualLng}`
       ).then((res) => res.json()),
       fetch(
-        `/weather/summary?latitude=${actualLat}&longitude=${actualLng}`
+        `${import.meta.env.VITE_BACKEND_URL}/weather/summary?latitude=${actualLat}&longitude=${actualLng}`
       ).then((res) => res.json()),
     ])
       .then(([fResp, sResp]) => {
